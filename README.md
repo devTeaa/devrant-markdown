@@ -1,8 +1,6 @@
 # devRant markdown supports
 
-![](preview-rant.PNG)
-
-![](preview-comment.PNG)
+![](preview-rant.PNG)![](preview-comment.PNG)
 
 ## To use it, you need to install Tampermonkey
 
