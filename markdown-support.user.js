@@ -10,7 +10,14 @@
 
 (function() {
   "use strict";
-  let elementToWatch = ["div.rantlist-title-text", "h1.rantlist-content", "div.rantlist-title :not(.rant-image)", "h1.rantlist-content"];
+  let elementToWatch = [
+    "div.rantlist-title-text",
+    "h1.rantlist-content",
+    "li.reply-row div.rantlist-title",
+    "div.rantlist-title :not(.rant-image)",
+    "div.rantlist-content",
+    "h1.rantlist-content"
+  ];
 
   let boldReg = `(\\*\\*)`;
   let italicReg = `(\\*|_)`;
