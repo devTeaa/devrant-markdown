@@ -15,6 +15,5 @@
 
 https://github.com/devTeaa/devrant-markdown/raw/master/markdown-support.user.js
 
-### Currently the markdown support is only headings (1, 2, 3), bold, and italic
-
-### To use markdown syntax, please check https://guides.github.com/features/mastering-markdown/ on how to use it
+Currently the markdown support is only bold, underlined, italic, strikethrough
+Please check https://guides.github.com/features/mastering-markdown/ on how to use it

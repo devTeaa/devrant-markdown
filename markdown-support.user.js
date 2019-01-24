@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         devrant-markdown
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  devRant markdown supports
 // @author       devTeaa
 // @match        https://devrant.com/*
@@ -10,10 +10,12 @@
 
 (function() {
   "use strict";
-  let elementToWatch = ["div.rantlist-title-text", "div.rantlist-title", "h1.rantlist-content", "div.related-rant-text"];
+  let elementToWatch = ["div.rantlist-title-text", "h1.rantlist-content", "div.rantlist-title :not(.rant-image)", "h1.rantlist-content"];
 
-  let boldReg = `(\\*\\*|__)`;
+  let boldReg = `(\\*\\*)`;
   let italicReg = `(\\*|_)`;
+  let underlineReg = `(__)`;
+  let strikethroughReg = `(~~)`;
 
   elementToWatch.forEach(element => {
     document.querySelectorAll(element).forEach(el => {
@@ -23,7 +25,18 @@
       detectedWords = el.innerHTML.match(new RegExp(`${boldReg}.+${boldReg}`, "g"));
       if (detectedWords) {
         detectedWords.forEach(x => {
-          el.innerHTML = el.innerHTML.replace(x, `<b>${x.replace(new RegExp(`${boldReg}`, "g"), "")}</b>`);
+          el.innerHTML = el.innerHTML.replace(x, `<strong>${x.replace(new RegExp(`${boldReg}`, "g"), "")}</strong>`);
+        });
+      }
+
+      // Underlined words
+      detectedWords = el.innerHTML.match(new RegExp(`${underlineReg}.+${underlineReg}`, "g"));
+      if (detectedWords) {
+        detectedWords.forEach(x => {
+          el.innerHTML = el.innerHTML.replace(
+            x,
+            `<span style="text-decoration: underline">${x.replace(new RegExp(`${underlineReg}`, "g"), "")}</span>`
+          );
         });
       }
 
@@ -31,7 +44,15 @@
       detectedWords = el.innerHTML.match(new RegExp(`${italicReg}.+${italicReg}`, "g"));
       if (detectedWords) {
         detectedWords.forEach(x => {
-          el.innerHTML = el.innerHTML.replace(x, `<i>${x.replace(new RegExp(`${italicReg}`, "g"), "")}</i>`);
+          el.innerHTML = el.innerHTML.replace(x, `<em>${x.replace(new RegExp(`${italicReg}`, "g"), "")}</em>`);
+        });
+      }
+
+      // Strikethrough words
+      detectedWords = el.innerHTML.match(new RegExp(`${strikethroughReg}.+${strikethroughReg}`, "g"));
+      if (detectedWords) {
+        detectedWords.forEach(x => {
+          el.innerHTML = el.innerHTML.replace(x, `<strike>${x.replace(new RegExp(`${strikethroughReg}`, "g"), "")}</strike>`);
         });
       }
     });
