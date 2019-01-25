@@ -6,10 +6,10 @@
 
 ### Download Tampermonkey:
 
-- **Chrome:** https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
-- **Firefox:** https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/
-- **Opera:** https://addons.opera.com/en/extensions/details/tampermonkey-beta/
-- **Other:** https://tampermonkey.net/ (follow instructions there)
+- **Chrome:** [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+- **Firefox:** [Tampermonkey](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
+- **Opera:** [Tampermonkey](https://addons.opera.com/en/extensions/details/tampermonkey-beta/)
+- **Other:** [Tampermonkey](https://tampermonkey.net/) or [Greasemonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/) (follow instructions there)
 
 ## Then, install the user-script here:
 
